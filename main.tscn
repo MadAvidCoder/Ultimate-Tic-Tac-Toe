@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://deljyhcm5765t"]
+[gd_scene load_steps=9 format=3 uid="uid://deljyhcm5765t"]
 
 [ext_resource type="Texture2D" uid="uid://dvf4it0tgaalc" path="res://Grid.png" id="1_8bol6"]
 [ext_resource type="Texture2D" uid="uid://d3hk4ekvjbgjo" path="res://Move Anywhere.png" id="1_biwna"]
 [ext_resource type="Texture2D" uid="uid://n383v545glke" path="res://Next Player.png" id="2_gqmyl"]
 [ext_resource type="PackedScene" uid="uid://bymq1pe2orjuo" path="res://mark.tscn" id="3_sqpk3"]
+[ext_resource type="Script" path="res://click_check.gd" id="5_2d2vc"]
 
-[sub_resource type="GDScript" id="GDScript_0eekp"]
+[sub_resource type="GDScript" id="GDScript_nefi5"]
 script/source = "extends Node2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,553 +17,1065 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# Autosize
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tg6ac"]
+size = Vector2(360, 360)
+
+[sub_resource type="GDScript" id="GDScript_mp2wy"]
+script/source = "extends AnimatedSprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
 	pass
 "
 
 [node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_nefi5")
 
-[node name="Game" type="Node2D" parent="."]
-script = SubResource("GDScript_0eekp")
-
-[node name="MoveAnywhere" type="Sprite2D" parent="Game"]
-position = Vector2(899, 531)
+[node name="MoveAnywhere" type="Sprite2D" parent="."]
+position = Vector2(906, 531)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_biwna")
 
-[node name="NextText" type="Sprite2D" parent="Game"]
+[node name="NextText" type="Sprite2D" parent="."]
 position = Vector2(913, 136)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_gqmyl")
 
-[node name="NextMark" parent="Game" instance=ExtResource("3_sqpk3")]
+[node name="NextMark" parent="." instance=ExtResource("3_sqpk3")]
 position = Vector2(906, 295)
 scale = Vector2(0.5, 0.5)
 speed_scale = 0.0
 
-[node name="Indicator" type="Polygon2D" parent="Game"]
+[node name="Indicator" type="Polygon2D" parent="."]
+visible = false
 position = Vector2(101, 50)
 color = Color(1, 0.647059, 0, 0.501961)
 polygon = PackedVector2Array(0, 0, 180, 0, 180, 180, 0, 180)
 
-[node name="Grid" type="Sprite2D" parent="Game"]
+[node name="Grid" type="Sprite2D" parent="."]
 position = Vector2(375, 324)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("1_8bol6")
 
-[node name="Marks" type="Node2D" parent="Game"]
+[node name="Marks" type="Node2D" parent="."]
 
-[node name="A1-A1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(142, 89)
+[node name="A1-A1" type="Area2D" parent="Marks"]
+position = Vector2(142, 91)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
+script = ExtResource("5_2d2vc")
 
-[node name="A1-A2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A1-A1"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A1-A1" parent="Marks/A1-A1" instance=ExtResource("3_sqpk3")]
+visible = false
+speed_scale = 0.0
+script = SubResource("GDScript_mp2wy")
+
+[node name="A1-A2" type="Area2D" parent="Marks"]
 position = Vector2(142, 141)
 scale = Vector2(0.13, 0.13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A1-A2"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A1-A2" parent="Marks/A1-A2" instance=ExtResource("3_sqpk3")]
+visible = false
 speed_scale = 0.0
 
-[node name="A1-A3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(142, 192)
+[node name="A1-A3" type="Area2D" parent="Marks"]
+position = Vector2(142, 190)
 scale = Vector2(0.13, 0.13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A1-A3"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A1-A3" parent="Marks/A1-A3" instance=ExtResource("3_sqpk3")]
+visible = false
 speed_scale = 0.0
 
-[node name="A1-B1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(192, 89)
+[node name="A1-B1" type="Area2D" parent="Marks"]
+position = Vector2(192, 91)
 scale = Vector2(0.13, 0.13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A1-B1"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A1-B1" parent="Marks/A1-B1" instance=ExtResource("3_sqpk3")]
+visible = false
 speed_scale = 0.0
 
-[node name="A1-B2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="A1-B2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(192, 141)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A1-B3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(192, 192)
+[node name="Area2D" type="Area2D" parent="Marks/A1-B2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A1-B2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A1-B3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(192, 190)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A1-C1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(242, 89)
+[node name="Area2D" type="Area2D" parent="Marks/A1-B3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A1-B3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A1-C1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(242, 91)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A1-C2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/A1-C1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A1-C1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A1-C2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(242, 141)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A1-C3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(242, 192)
+[node name="Area2D" type="Area2D" parent="Marks/A1-C2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A1-C2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A1-C3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(242, 190)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B1-A1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(325, 89)
+[node name="Area2D" type="Area2D" parent="Marks/A1-C3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A1-C3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B1-A1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(325, 91)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B1-A2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/B1-A1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-A1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B1-A2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(325, 141)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B1-A3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(325, 192)
+[node name="Area2D" type="Area2D" parent="Marks/B1-A2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-A2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B1-A3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(325, 190)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B1-B1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(375, 89)
+[node name="Area2D" type="Area2D" parent="Marks/B1-A3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-A3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B1-B1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(375, 91)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B1-B2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/B1-B1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-B1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B1-B2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(375, 141)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B1-B3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(375, 192)
+[node name="Area2D" type="Area2D" parent="Marks/B1-B2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-B2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B1-B3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(375, 190)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B1-C1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(425, 89)
+[node name="Area2D" type="Area2D" parent="Marks/B1-B3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-B3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B1-C1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(425, 91)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B1-C2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/B1-C1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-C1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B1-C2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(425, 141)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B1-C3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(425, 192)
+[node name="Area2D" type="Area2D" parent="Marks/B1-C2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-C2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B1-C3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(425, 190)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C1-A1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(509, 89)
+[node name="Area2D" type="Area2D" parent="Marks/B1-C3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-C3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C1-A1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(509, 91)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C1-A2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/C1-A1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-A1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C1-A2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(509, 141)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C1-A3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(509, 192)
+[node name="Area2D" type="Area2D" parent="Marks/C1-A2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-A2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C1-A3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(509, 190)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C1-B1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(559, 89)
+[node name="Area2D" type="Area2D" parent="Marks/C1-A3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-A3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C1-B1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(559, 91)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C1-B2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/C1-B1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-B1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C1-B2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(559, 141)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C1-B3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(559, 192)
+[node name="Area2D" type="Area2D" parent="Marks/C1-B2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-B2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C1-B3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(559, 190)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C1-C1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(609, 89)
+[node name="Area2D" type="Area2D" parent="Marks/C1-B3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-B3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C1-C1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(609, 91)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C1-C2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/C1-C1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-C1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C1-C2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(609, 141)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C1-C3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(609, 192)
+[node name="Area2D" type="Area2D" parent="Marks/C1-C2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-C2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C1-C3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(609, 190)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A2-A1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(142, 273)
+[node name="Area2D" type="Area2D" parent="Marks/C1-C3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-C3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A2-A1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(142, 275)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A2-A2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/A2-A1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-A1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A2-A2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(142, 325)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A2-A3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(142, 376)
+[node name="Area2D" type="Area2D" parent="Marks/A2-A2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-A2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A2-A3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(142, 374)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A2-B1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(192, 273)
+[node name="Area2D" type="Area2D" parent="Marks/A2-A3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-A3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A2-B1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(192, 275)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A2-B2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/A2-B1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-B1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A2-B2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(192, 325)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A2-B3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(192, 376)
+[node name="Area2D" type="Area2D" parent="Marks/A2-B2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-B2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A2-B3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(192, 374)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A2-C1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(242, 273)
+[node name="Area2D" type="Area2D" parent="Marks/A2-B3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-B3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A2-C1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(242, 275)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A2-C2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/A2-C1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-C1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A2-C2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(242, 325)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A2-C3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(242, 376)
+[node name="Area2D" type="Area2D" parent="Marks/A2-C2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-C2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A2-C3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(242, 374)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B2-A1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(325, 273)
+[node name="Area2D" type="Area2D" parent="Marks/A2-C3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-C3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B2-A1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(325, 275)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B2-A2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/B2-A1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-A1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B2-A2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(325, 325)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B2-A3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(325, 376)
+[node name="Area2D" type="Area2D" parent="Marks/B2-A2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-A2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B2-A3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(325, 374)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B2-B1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(375, 273)
+[node name="Area2D" type="Area2D" parent="Marks/B2-A3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-A3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B2-B1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(375, 275)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B2-B2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/B2-B1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-B1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B2-B2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(375, 325)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B2-B3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(375, 376)
+[node name="Area2D" type="Area2D" parent="Marks/B2-B2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-B2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B2-B3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(375, 374)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B2-C1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(425, 273)
+[node name="Area2D" type="Area2D" parent="Marks/B2-B3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-B3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B2-C1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(425, 275)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B2-C2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/B2-C1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-C1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B2-C2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(425, 325)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B2-C3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(425, 376)
+[node name="Area2D" type="Area2D" parent="Marks/B2-C2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-C2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B2-C3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(425, 374)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C2-A1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(509, 273)
+[node name="Area2D" type="Area2D" parent="Marks/B2-C3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-C3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C2-A1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(509, 275)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C2-A2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/C2-A1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-A1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C2-A2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(509, 325)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C2-A3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(509, 376)
+[node name="Area2D" type="Area2D" parent="Marks/C2-A2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-A2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C2-A3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(509, 374)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C2-B1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(559, 273)
+[node name="Area2D" type="Area2D" parent="Marks/C2-A3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-A3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C2-B1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(559, 275)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C2-B2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/C2-B1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-B1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C2-B2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(559, 325)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C2-B3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(559, 376)
+[node name="Area2D" type="Area2D" parent="Marks/C2-B2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-B2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C2-B3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(559, 374)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C2-C1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(609, 273)
+[node name="Area2D" type="Area2D" parent="Marks/C2-B3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-B3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C2-C1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(609, 275)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C2-C2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/C2-C1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-C1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C2-C2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(609, 325)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C2-C3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(609, 376)
+[node name="Area2D" type="Area2D" parent="Marks/C2-C2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-C2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C2-C3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(609, 374)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A3-A1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(142, 455)
+[node name="Area2D" type="Area2D" parent="Marks/C2-C3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-C3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A3-A1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(142, 457)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A3-A2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/A3-A1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-A1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A3-A2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(142, 507)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A3-A3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(142, 558)
+[node name="Area2D" type="Area2D" parent="Marks/A3-A2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-A2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A3-A3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(142, 556)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A3-B1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(192, 455)
+[node name="Area2D" type="Area2D" parent="Marks/A3-A3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-A3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A3-B1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(192, 457)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A3-B2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/A3-B1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-B1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A3-B2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(192, 507)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A3-B3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(192, 558)
+[node name="Area2D" type="Area2D" parent="Marks/A3-B2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-B2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A3-B3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(192, 556)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A3-C1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(242, 455)
+[node name="Area2D" type="Area2D" parent="Marks/A3-B3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-B3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A3-C1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(242, 457)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A3-C2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/A3-C1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-C1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A3-C2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(242, 507)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="A3-C3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(242, 558)
+[node name="Area2D" type="Area2D" parent="Marks/A3-C2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-C2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="A3-C3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(242, 556)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B3-A1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(325, 455)
+[node name="Area2D" type="Area2D" parent="Marks/A3-C3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-C3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B3-A1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(325, 457)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B3-A2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/B3-A1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-A1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B3-A2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(325, 507)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B3-A3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(325, 558)
+[node name="Area2D" type="Area2D" parent="Marks/B3-A2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-A2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B3-A3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(325, 556)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B3-B1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(375, 455)
+[node name="Area2D" type="Area2D" parent="Marks/B3-A3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-A3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B3-B1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(375, 457)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B3-B2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/B3-B1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-B1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B3-B2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(375, 507)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B3-B3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(375, 558)
+[node name="Area2D" type="Area2D" parent="Marks/B3-B2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-B2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B3-B3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(375, 556)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B3-C1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(425, 455)
+[node name="Area2D" type="Area2D" parent="Marks/B3-B3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-B3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B3-C1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(425, 457)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B3-C2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/B3-C1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-C1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B3-C2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(425, 507)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="B3-C3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(425, 558)
+[node name="Area2D" type="Area2D" parent="Marks/B3-C2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-C2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="B3-C3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(425, 556)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C3-A1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(509, 455)
+[node name="Area2D" type="Area2D" parent="Marks/B3-C3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-C3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C3-A1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(509, 457)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C3-A2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/C3-A1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-A1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C3-A2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(509, 507)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C3-A3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(509, 558)
+[node name="Area2D" type="Area2D" parent="Marks/C3-A2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-A2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C3-A3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(509, 556)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C3-B1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(559, 455)
+[node name="Area2D" type="Area2D" parent="Marks/C3-A3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-A3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C3-B1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(559, 457)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C3-B2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/C3-B1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-B1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C3-B2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(559, 507)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C3-B3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(559, 558)
+[node name="Area2D" type="Area2D" parent="Marks/C3-B2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-B2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C3-B3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(559, 556)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C3-C1" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(609, 455)
+[node name="Area2D" type="Area2D" parent="Marks/C3-B3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-B3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C3-C1" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(609, 457)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C3-C2" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
+[node name="Area2D" type="Area2D" parent="Marks/C3-C1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-C1/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C3-C2" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
 position = Vector2(609, 507)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="C3-C3" parent="Game/Marks" instance=ExtResource("3_sqpk3")]
-position = Vector2(609, 558)
+[node name="Area2D" type="Area2D" parent="Marks/C3-C2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-C2/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C3-C3" parent="Marks" instance=ExtResource("3_sqpk3")]
+visible = false
+position = Vector2(609, 556)
 scale = Vector2(0.13, 0.13)
 speed_scale = 0.0
 
-[node name="BigMarks" type="Node2D" parent="Game"]
+[node name="Area2D" type="Area2D" parent="Marks/C3-C3"]
 
-[node name="A1" type="Node2D" parent="Game/BigMarks"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-C3/Area2D"]
+shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="BigMarks" type="Node2D" parent="."]
+
+[node name="A1" type="Node2D" parent="BigMarks"]
+visible = false
 position = Vector2(191, 140)
 
-[node name="Fade" type="Polygon2D" parent="Game/BigMarks/A1"]
+[node name="Fade" type="Polygon2D" parent="BigMarks/A1"]
 position = Vector2(-90, -90)
 color = Color(1, 1, 1, 0.666667)
 polygon = PackedVector2Array(0, 0, 180, 0, 180, 180, 0, 180)
 
-[node name="Sprite" parent="Game/BigMarks/A1" instance=ExtResource("3_sqpk3")]
+[node name="Sprite" parent="BigMarks/A1" instance=ExtResource("3_sqpk3")]
 scale = Vector2(0.5, 0.5)
 frame = 1
 
-[node name="A2" type="Node2D" parent="Game/BigMarks"]
+[node name="A2" type="Node2D" parent="BigMarks"]
+visible = false
 position = Vector2(191, 324)
 
-[node name="Fade" type="Polygon2D" parent="Game/BigMarks/A2"]
+[node name="Fade" type="Polygon2D" parent="BigMarks/A2"]
 position = Vector2(-90, -90)
 color = Color(1, 1, 1, 0.666667)
 polygon = PackedVector2Array(0, 0, 180, 0, 180, 180, 0, 180)
 
-[node name="Sprite" parent="Game/BigMarks/A2" instance=ExtResource("3_sqpk3")]
+[node name="Sprite" parent="BigMarks/A2" instance=ExtResource("3_sqpk3")]
 scale = Vector2(0.5, 0.5)
 frame = 1
 
-[node name="A3" type="Node2D" parent="Game/BigMarks"]
+[node name="A3" type="Node2D" parent="BigMarks"]
+visible = false
 position = Vector2(191, 508)
 
-[node name="Fade" type="Polygon2D" parent="Game/BigMarks/A3"]
+[node name="Fade" type="Polygon2D" parent="BigMarks/A3"]
 position = Vector2(-90, -90)
 color = Color(1, 1, 1, 0.666667)
 polygon = PackedVector2Array(0, 0, 180, 0, 180, 180, 0, 180)
 
-[node name="Sprite" parent="Game/BigMarks/A3" instance=ExtResource("3_sqpk3")]
+[node name="Sprite" parent="BigMarks/A3" instance=ExtResource("3_sqpk3")]
 scale = Vector2(0.5, 0.5)
 frame = 1
 
-[node name="B1" type="Node2D" parent="Game/BigMarks"]
+[node name="B1" type="Node2D" parent="BigMarks"]
+visible = false
 position = Vector2(375, 140)
 
-[node name="Fade" type="Polygon2D" parent="Game/BigMarks/B1"]
+[node name="Fade" type="Polygon2D" parent="BigMarks/B1"]
 position = Vector2(-90, -90)
 color = Color(1, 1, 1, 0.666667)
 polygon = PackedVector2Array(0, 0, 180, 0, 180, 180, 0, 180)
 
-[node name="Sprite" parent="Game/BigMarks/B1" instance=ExtResource("3_sqpk3")]
+[node name="Sprite" parent="BigMarks/B1" instance=ExtResource("3_sqpk3")]
 scale = Vector2(0.5, 0.5)
 frame = 1
 
-[node name="B2" type="Node2D" parent="Game/BigMarks"]
+[node name="B2" type="Node2D" parent="BigMarks"]
+visible = false
 position = Vector2(375, 324)
 
-[node name="Fade" type="Polygon2D" parent="Game/BigMarks/B2"]
+[node name="Fade" type="Polygon2D" parent="BigMarks/B2"]
 position = Vector2(-90, -90)
 color = Color(1, 1, 1, 0.666667)
 polygon = PackedVector2Array(0, 0, 180, 0, 180, 180, 0, 180)
 
-[node name="Sprite" parent="Game/BigMarks/B2" instance=ExtResource("3_sqpk3")]
+[node name="Sprite" parent="BigMarks/B2" instance=ExtResource("3_sqpk3")]
 scale = Vector2(0.5, 0.5)
 frame = 1
 
-[node name="B3" type="Node2D" parent="Game/BigMarks"]
+[node name="B3" type="Node2D" parent="BigMarks"]
+visible = false
 position = Vector2(375, 508)
 
-[node name="Fade" type="Polygon2D" parent="Game/BigMarks/B3"]
+[node name="Fade" type="Polygon2D" parent="BigMarks/B3"]
 position = Vector2(-90, -90)
 color = Color(1, 1, 1, 0.666667)
 polygon = PackedVector2Array(0, 0, 180, 0, 180, 180, 0, 180)
 
-[node name="Sprite" parent="Game/BigMarks/B3" instance=ExtResource("3_sqpk3")]
+[node name="Sprite" parent="BigMarks/B3" instance=ExtResource("3_sqpk3")]
 scale = Vector2(0.5, 0.5)
 frame = 1
 
-[node name="C1" type="Node2D" parent="Game/BigMarks"]
+[node name="C1" type="Node2D" parent="BigMarks"]
+visible = false
 position = Vector2(559, 140)
 
-[node name="Fade" type="Polygon2D" parent="Game/BigMarks/C1"]
+[node name="Fade" type="Polygon2D" parent="BigMarks/C1"]
 position = Vector2(-90, -90)
 color = Color(1, 1, 1, 0.666667)
 polygon = PackedVector2Array(0, 0, 180, 0, 180, 180, 0, 180)
 
-[node name="Sprite" parent="Game/BigMarks/C1" instance=ExtResource("3_sqpk3")]
+[node name="Sprite" parent="BigMarks/C1" instance=ExtResource("3_sqpk3")]
 scale = Vector2(0.5, 0.5)
 frame = 1
 
-[node name="C2" type="Node2D" parent="Game/BigMarks"]
+[node name="C2" type="Node2D" parent="BigMarks"]
+visible = false
 position = Vector2(559, 324)
 
-[node name="Fade" type="Polygon2D" parent="Game/BigMarks/C2"]
+[node name="Fade" type="Polygon2D" parent="BigMarks/C2"]
 position = Vector2(-90, -90)
 color = Color(1, 1, 1, 0.666667)
 polygon = PackedVector2Array(0, 0, 180, 0, 180, 180, 0, 180)
 
-[node name="Sprite" parent="Game/BigMarks/C2" instance=ExtResource("3_sqpk3")]
+[node name="Sprite" parent="BigMarks/C2" instance=ExtResource("3_sqpk3")]
 scale = Vector2(0.5, 0.5)
 frame = 1
 
-[node name="C3" type="Node2D" parent="Game/BigMarks"]
+[node name="C3" type="Node2D" parent="BigMarks"]
+visible = false
 position = Vector2(559, 508)
 
-[node name="Fade" type="Polygon2D" parent="Game/BigMarks/C3"]
+[node name="Fade" type="Polygon2D" parent="BigMarks/C3"]
 position = Vector2(-90, -90)
 color = Color(1, 1, 1, 0.666667)
 polygon = PackedVector2Array(0, 0, 180, 0, 180, 180, 0, 180)
 
-[node name="Sprite" parent="Game/BigMarks/C3" instance=ExtResource("3_sqpk3")]
+[node name="Sprite" parent="BigMarks/C3" instance=ExtResource("3_sqpk3")]
 scale = Vector2(0.5, 0.5)
 frame = 1
