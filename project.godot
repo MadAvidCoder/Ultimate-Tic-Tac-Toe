@@ -13,6 +13,8 @@ config_version=5
 config/name="Ultimate Tic-Tac-Toe"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/image="res://Logo.png"
 config/icon="res://icon.svg"
 
 [display]

@@ -1182,7 +1182,7 @@ offset_top = 503.0
 offset_right = 675.0
 offset_bottom = 560.0
 theme_override_font_sizes/font_size = 35
-text = "Play Again?"
+text = "Play Again!"
 
 [node name="Begin" type="Node2D" parent="."]
 
