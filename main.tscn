@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://deljyhcm5765t"]
+[gd_scene load_steps=13 format=3 uid="uid://deljyhcm5765t"]
 
 [ext_resource type="Texture2D" uid="uid://dvf4it0tgaalc" path="res://Grid.png" id="1_8bol6"]
 [ext_resource type="Texture2D" uid="uid://d3hk4ekvjbgjo" path="res://Move Anywhere.png" id="1_biwna"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://click_check.gd" id="5_2d2vc"]
 [ext_resource type="Texture2D" uid="uid://cpl7mmbdjr654" path="res://Xs Win.png" id="7_yvnnf"]
 [ext_resource type="Texture2D" uid="uid://beb4wqeo2fxiu" path="res://Os win.png" id="8_vn7m8"]
+[ext_resource type="Texture2D" uid="uid://d1epgedk80y5k" path="res://Logo.png" id="9_tsv3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tg6ac"]
 size = Vector2(360, 360)
@@ -1183,4 +1184,24 @@ offset_bottom = 560.0
 theme_override_font_sizes/font_size = 35
 text = "Play Again?"
 
+[node name="Begin" type="Node2D" parent="."]
+
+[node name="Fade" type="Polygon2D" parent="Begin"]
+color = Color(1, 1, 1, 0.705882)
+polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 648, 0, 648)
+
+[node name="Logo" type="Sprite2D" parent="Begin"]
+position = Vector2(576, 200)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("9_tsv3g")
+
+[node name="Play" type="Button" parent="Begin"]
+offset_left = 477.0
+offset_top = 503.0
+offset_right = 675.0
+offset_bottom = 560.0
+theme_override_font_sizes/font_size = 35
+text = "Lets Play!"
+
 [connection signal="pressed" from="Win/Again" to="." method="_on_again_pressed"]
+[connection signal="pressed" from="Begin/Play" to="." method="_on_play_pressed"]

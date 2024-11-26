@@ -20,6 +20,7 @@ var state
 var winner
 var win_overlay
 var win_mark
+var begin
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -44,6 +45,8 @@ func _ready() -> void:
 	next = get_node("NextMark")
 	next.frame = 0
 	next.show()
+	
+	begin = get_node("Begin")
 	
 	win_overlay = get_node("Win")
 	win_overlay.hide()
@@ -134,7 +137,10 @@ func check_won(search_square: int, player: int) -> bool:
 				return true
 	return false
 
-
+func _on_play_pressed() -> void:
+	begin.hide()
+	anywhere.show()
+	state = 1
 
 func _on_again_pressed() -> void:
 	win_overlay.hide()
@@ -142,7 +148,8 @@ func _on_again_pressed() -> void:
 
 func _process(_delta: float) -> void:
 	if state == 0:
-		state = 1 # Show Instructions
+		begin.show()
+		anywhere.hide()
 	elif state == 1:
 		if click_buffer:
 			if child_sprites[click_buffer[0]][click_buffer[1]].visible == false and cur_big_square in [click_buffer[0], -1] and not click_buffer[0] in won:
