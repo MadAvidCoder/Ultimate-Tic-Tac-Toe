@@ -114,852 +114,852 @@ shape = SubResource("RectangleShape2D_tg6ac")
 visible = false
 speed_scale = 0.0
 
-[node name="A1-B2" parent="Marks" instance=ExtResource("3_sqpk3")]
-visible = false
+[node name="A1-B2" type="Area2D" parent="Marks"]
 position = Vector2(192, 141)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A1-B2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A1-B2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A1-B2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A1-B3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A1-B2" parent="Marks/A1-B2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A1-B3" type="Area2D" parent="Marks"]
 position = Vector2(192, 190)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A1-B3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A1-B3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A1-B3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A1-C1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A1-B3" parent="Marks/A1-B3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A1-C1" type="Area2D" parent="Marks"]
 position = Vector2(242, 91)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A1-C1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A1-C1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A1-C1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A1-C2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A1-C1" parent="Marks/A1-C1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A1-C2" type="Area2D" parent="Marks"]
 position = Vector2(242, 141)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A1-C2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A1-C2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A1-C2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A1-C3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A1-C2" parent="Marks/A1-C2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A1-C3" type="Area2D" parent="Marks"]
 position = Vector2(242, 190)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A1-C3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A1-C3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A1-C3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B1-A1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A1-C3" parent="Marks/A1-C3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B1-A1" type="Area2D" parent="Marks"]
 position = Vector2(325, 91)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B1-A1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-A1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-A1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B1-A2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B1-A1" parent="Marks/B1-A1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B1-A2" type="Area2D" parent="Marks"]
 position = Vector2(325, 141)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B1-A2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-A2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-A2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B1-A3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B1-A2" parent="Marks/B1-A2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B1-A3" type="Area2D" parent="Marks"]
 position = Vector2(325, 190)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B1-A3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-A3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-A3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B1-B1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B1-A3" parent="Marks/B1-A3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B1-B1" type="Area2D" parent="Marks"]
 position = Vector2(375, 91)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B1-B1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-B1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-B1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B1-B2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B1-B1" parent="Marks/B1-B1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B1-B2" type="Area2D" parent="Marks"]
 position = Vector2(375, 141)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B1-B2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-B2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-B2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B1-B3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B1-B2" parent="Marks/B1-B2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B1-B3" type="Area2D" parent="Marks"]
 position = Vector2(375, 190)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B1-B3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-B3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-B3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B1-C1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B1-B3" parent="Marks/B1-B3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B1-C1" type="Area2D" parent="Marks"]
 position = Vector2(425, 91)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B1-C1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-C1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-C1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B1-C2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B1-C1" parent="Marks/B1-C1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B1-C2" type="Area2D" parent="Marks"]
 position = Vector2(425, 141)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B1-C2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-C2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-C2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B1-C3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B1-C2" parent="Marks/B1-C2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B1-C3" type="Area2D" parent="Marks"]
 position = Vector2(425, 190)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B1-C3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-C3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B1-C3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C1-A1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B1-C3" parent="Marks/B1-C3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C1-A1" type="Area2D" parent="Marks"]
 position = Vector2(509, 91)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C1-A1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-A1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-A1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C1-A2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C1-A1" parent="Marks/C1-A1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C1-A2" type="Area2D" parent="Marks"]
 position = Vector2(509, 141)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C1-A2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-A2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-A2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C1-A3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C1-A2" parent="Marks/C1-A2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C1-A3" type="Area2D" parent="Marks"]
 position = Vector2(509, 190)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C1-A3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-A3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-A3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C1-B1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C1-A3" parent="Marks/C1-A3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C1-B1" type="Area2D" parent="Marks"]
 position = Vector2(559, 91)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C1-B1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-B1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-B1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C1-B2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C1-B1" parent="Marks/C1-B1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C1-B2" type="Area2D" parent="Marks"]
 position = Vector2(559, 141)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C1-B2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-B2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-B2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C1-B3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C1-B2" parent="Marks/C1-B2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C1-B3" type="Area2D" parent="Marks"]
 position = Vector2(559, 190)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C1-B3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-B3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-B3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C1-C1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C1-B3" parent="Marks/C1-B3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C1-C1" type="Area2D" parent="Marks"]
 position = Vector2(609, 91)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C1-C1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-C1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-C1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C1-C2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C1-C1" parent="Marks/C1-C1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C1-C2" type="Area2D" parent="Marks"]
 position = Vector2(609, 141)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C1-C2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-C2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-C2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C1-C3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C1-C2" parent="Marks/C1-C2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C1-C3" type="Area2D" parent="Marks"]
 position = Vector2(609, 190)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C1-C3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-C3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C1-C3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A2-A1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C1-C3" parent="Marks/C1-C3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A2-A1" type="Area2D" parent="Marks"]
 position = Vector2(142, 275)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A2-A1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-A1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-A1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A2-A2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A2-A1" parent="Marks/A2-A1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A2-A2" type="Area2D" parent="Marks"]
 position = Vector2(142, 325)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A2-A2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-A2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-A2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A2-A3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A2-A2" parent="Marks/A2-A2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A2-A3" type="Area2D" parent="Marks"]
 position = Vector2(142, 374)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A2-A3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-A3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-A3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A2-B1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A2-A3" parent="Marks/A2-A3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A2-B1" type="Area2D" parent="Marks"]
 position = Vector2(192, 275)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A2-B1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-B1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-B1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A2-B2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A2-B1" parent="Marks/A2-B1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A2-B2" type="Area2D" parent="Marks"]
 position = Vector2(192, 325)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A2-B2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-B2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-B2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A2-B3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A2-B2" parent="Marks/A2-B2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A2-B3" type="Area2D" parent="Marks"]
 position = Vector2(192, 374)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A2-B3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-B3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-B3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A2-C1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A2-B3" parent="Marks/A2-B3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A2-C1" type="Area2D" parent="Marks"]
 position = Vector2(242, 275)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A2-C1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-C1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-C1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A2-C2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A2-C1" parent="Marks/A2-C1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A2-C2" type="Area2D" parent="Marks"]
 position = Vector2(242, 325)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A2-C2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-C2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-C2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A2-C3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A2-C2" parent="Marks/A2-C2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A2-C3" type="Area2D" parent="Marks"]
 position = Vector2(242, 374)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A2-C3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-C3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-C3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B2-A1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A2-C3" parent="Marks/A2-C3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B2-A1" type="Area2D" parent="Marks"]
 position = Vector2(325, 275)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B2-A1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-A1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-A1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B2-A2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B2-A1" parent="Marks/B2-A1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B2-A2" type="Area2D" parent="Marks"]
 position = Vector2(325, 325)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B2-A2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-A2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-A2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B2-A3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B2-A2" parent="Marks/B2-A2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B2-A3" type="Area2D" parent="Marks"]
 position = Vector2(325, 374)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B2-A3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-A3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-A3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B2-B1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B2-A3" parent="Marks/B2-A3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B2-B1" type="Area2D" parent="Marks"]
 position = Vector2(375, 275)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B2-B1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-B1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-B1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B2-B2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B2-B1" parent="Marks/B2-B1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B2-B2" type="Area2D" parent="Marks"]
 position = Vector2(375, 325)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B2-B2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-B2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-B2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B2-B3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B2-B2" parent="Marks/B2-B2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B2-B3" type="Area2D" parent="Marks"]
 position = Vector2(375, 374)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B2-B3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-B3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-B3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B2-C1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B2-B3" parent="Marks/B2-B3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B2-C1" type="Area2D" parent="Marks"]
 position = Vector2(425, 275)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B2-C1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-C1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-C1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B2-C2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B2-C1" parent="Marks/B2-C1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B2-C2" type="Area2D" parent="Marks"]
 position = Vector2(425, 325)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B2-C2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-C2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-C2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B2-C3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B2-C2" parent="Marks/B2-C2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B2-C3" type="Area2D" parent="Marks"]
 position = Vector2(425, 374)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B2-C3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-C3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-C3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C2-A1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B2-C3" parent="Marks/B2-C3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C2-A1" type="Area2D" parent="Marks"]
 position = Vector2(509, 275)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C2-A1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-A1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-A1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C2-A2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C2-A1" parent="Marks/C2-A1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C2-A2" type="Area2D" parent="Marks"]
 position = Vector2(509, 325)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C2-A2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-A2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-A2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C2-A3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C2-A2" parent="Marks/C2-A2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C2-A3" type="Area2D" parent="Marks"]
 position = Vector2(509, 374)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C2-A3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-A3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-A3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C2-B1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C2-A3" parent="Marks/C2-A3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C2-B1" type="Area2D" parent="Marks"]
 position = Vector2(559, 275)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C2-B1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-B1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-B1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C2-B2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C2-B1" parent="Marks/C2-B1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C2-B2" type="Area2D" parent="Marks"]
 position = Vector2(559, 325)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C2-B2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-B2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-B2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C2-B3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C2-B2" parent="Marks/C2-B2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C2-B3" type="Area2D" parent="Marks"]
 position = Vector2(559, 374)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C2-B3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-B3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-B3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C2-C1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C2-B3" parent="Marks/C2-B3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C2-C1" type="Area2D" parent="Marks"]
 position = Vector2(609, 275)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C2-C1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-C1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-C1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C2-C2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C2-C1" parent="Marks/C2-C1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C2-C2" type="Area2D" parent="Marks"]
 position = Vector2(609, 325)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C2-C2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-C2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-C2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C2-C3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C2-C2" parent="Marks/C2-C2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C2-C3" type="Area2D" parent="Marks"]
 position = Vector2(609, 374)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C2-C3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-C3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C2-C3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A3-A1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C2-C3" parent="Marks/C2-C3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A3-A1" type="Area2D" parent="Marks"]
 position = Vector2(142, 457)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A3-A1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-A1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-A1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A3-A2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A3-A1" parent="Marks/A3-A1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A3-A2" type="Area2D" parent="Marks"]
 position = Vector2(142, 507)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A3-A2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-A2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-A2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A3-A3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A3-A2" parent="Marks/A3-A2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A3-A3" type="Area2D" parent="Marks"]
 position = Vector2(142, 556)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A3-A3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-A3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-A3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A3-B1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A3-A3" parent="Marks/A3-A3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A3-B1" type="Area2D" parent="Marks"]
 position = Vector2(192, 457)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A3-B1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-B1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-B1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A3-B2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A3-B1" parent="Marks/A3-B1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A3-B2" type="Area2D" parent="Marks"]
 position = Vector2(192, 507)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A3-B2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-B2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-B2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A3-B3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A3-B2" parent="Marks/A3-B2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A3-B3" type="Area2D" parent="Marks"]
 position = Vector2(192, 556)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A3-B3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-B3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-B3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A3-C1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A3-B3" parent="Marks/A3-B3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A3-C1" type="Area2D" parent="Marks"]
 position = Vector2(242, 457)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A3-C1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-C1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-C1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A3-C2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A3-C1" parent="Marks/A3-C1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A3-C2" type="Area2D" parent="Marks"]
 position = Vector2(242, 507)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A3-C2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-C2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-C2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="A3-C3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A3-C2" parent="Marks/A3-C2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="A3-C3" type="Area2D" parent="Marks"]
 position = Vector2(242, 556)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/A3-C3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-C3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A3-C3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B3-A1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="A3-C3" parent="Marks/A3-C3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B3-A1" type="Area2D" parent="Marks"]
 position = Vector2(325, 457)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B3-A1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-A1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-A1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B3-A2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B3-A1" parent="Marks/B3-A1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B3-A2" type="Area2D" parent="Marks"]
 position = Vector2(325, 507)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B3-A2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-A2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-A2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B3-A3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B3-A2" parent="Marks/B3-A2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B3-A3" type="Area2D" parent="Marks"]
 position = Vector2(325, 556)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B3-A3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-A3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-A3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B3-B1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B3-A3" parent="Marks/B3-A3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B3-B1" type="Area2D" parent="Marks"]
 position = Vector2(375, 457)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B3-B1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-B1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-B1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B3-B2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B3-B1" parent="Marks/B3-B1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B3-B2" type="Area2D" parent="Marks"]
 position = Vector2(375, 507)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B3-B2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-B2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-B2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B3-B3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B3-B2" parent="Marks/B3-B2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B3-B3" type="Area2D" parent="Marks"]
 position = Vector2(375, 556)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B3-B3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-B3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-B3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B3-C1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B3-B3" parent="Marks/B3-B3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B3-C1" type="Area2D" parent="Marks"]
 position = Vector2(425, 457)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B3-C1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-C1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-C1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B3-C2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B3-C1" parent="Marks/B3-C1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B3-C2" type="Area2D" parent="Marks"]
 position = Vector2(425, 507)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B3-C2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-C2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-C2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B3-C3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B3-C2" parent="Marks/B3-C2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="B3-C3" type="Area2D" parent="Marks"]
 position = Vector2(425, 556)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/B3-C3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-C3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B3-C3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C3-A1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="B3-C3" parent="Marks/B3-C3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C3-A1" type="Area2D" parent="Marks"]
 position = Vector2(509, 457)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C3-A1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-A1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-A1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C3-A2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C3-A1" parent="Marks/C3-A1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C3-A2" type="Area2D" parent="Marks"]
 position = Vector2(509, 507)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C3-A2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-A2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-A2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C3-A3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C3-A2" parent="Marks/C3-A2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C3-A3" type="Area2D" parent="Marks"]
 position = Vector2(509, 556)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C3-A3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-A3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-A3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C3-B1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C3-A3" parent="Marks/C3-A3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C3-B1" type="Area2D" parent="Marks"]
 position = Vector2(559, 457)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C3-B1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-B1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-B1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C3-B2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C3-B1" parent="Marks/C3-B1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C3-B2" type="Area2D" parent="Marks"]
 position = Vector2(559, 507)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C3-B2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-B2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-B2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C3-B3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C3-B2" parent="Marks/C3-B2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C3-B3" type="Area2D" parent="Marks"]
 position = Vector2(559, 556)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C3-B3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-B3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-B3"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C3-C1" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C3-B3" parent="Marks/C3-B3" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C3-C1" type="Area2D" parent="Marks"]
 position = Vector2(609, 457)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C3-C1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-C1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-C1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C3-C2" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C3-C1" parent="Marks/C3-C1" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C3-C2" type="Area2D" parent="Marks"]
 position = Vector2(609, 507)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C3-C2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-C2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-C2"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="C3-C3" parent="Marks" instance=ExtResource("3_sqpk3")]
+[node name="C3-C2" parent="Marks/C3-C2" instance=ExtResource("3_sqpk3")]
 visible = false
+speed_scale = 0.0
+
+[node name="C3-C3" type="Area2D" parent="Marks"]
 position = Vector2(609, 556)
 scale = Vector2(0.13, 0.13)
-speed_scale = 0.0
 
-[node name="Area2D" type="Area2D" parent="Marks/C3-C3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-C3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/C3-C3"]
 shape = SubResource("RectangleShape2D_tg6ac")
+
+[node name="C3-C3" parent="Marks/C3-C3" instance=ExtResource("3_sqpk3")]
+visible = false
+speed_scale = 0.0
 
 [node name="BigMarks" type="Node2D" parent="."]
 
