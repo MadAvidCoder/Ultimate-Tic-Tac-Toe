@@ -1,5 +1,7 @@
 extends Area2D
 
-func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
+signal clicked(path)
+
+func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("click"):
-		print("Clicked!")
+		clicked.emit(self.get_path())

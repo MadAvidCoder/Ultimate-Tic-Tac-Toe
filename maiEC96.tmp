@@ -488,15 +488,14 @@ shape = SubResource("RectangleShape2D_tg6ac")
 visible = false
 speed_scale = 0.0
 
-[node name="B2-A1" type="Area2D" parent="Marks"]
-position = Vector2(325, 275)
-scale = Vector2(0.13, 0.13)
+[node name="B2-A1" type="Area2D" parent="Marks/A2-C3"]
+position = Vector2(638.461, -761.538)
 script = ExtResource("5_2d2vc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-A1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-C3/B2-A1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B2-A1" parent="Marks/B2-A1" instance=ExtResource("3_sqpk3")]
+[node name="B2-A1" parent="Marks/A2-C3/B2-A1" instance=ExtResource("3_sqpk3")]
 visible = false
 speed_scale = 0.0
 

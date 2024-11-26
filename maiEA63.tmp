@@ -2,10 +2,33 @@
 
 [ext_resource type="Texture2D" uid="uid://dvf4it0tgaalc" path="res://Grid.png" id="1_8bol6"]
 [ext_resource type="Texture2D" uid="uid://d3hk4ekvjbgjo" path="res://Move Anywhere.png" id="1_biwna"]
-[ext_resource type="Script" path="res://main.gd" id="1_yhxv0"]
 [ext_resource type="Texture2D" uid="uid://n383v545glke" path="res://Next Player.png" id="2_gqmyl"]
 [ext_resource type="PackedScene" uid="uid://bymq1pe2orjuo" path="res://mark.tscn" id="3_sqpk3"]
 [ext_resource type="Script" path="res://click_check.gd" id="5_2d2vc"]
+
+[sub_resource type="GDScript" id="GDScript_nefi5"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	var child_areas = []
+	var click_connects = []
+	for i in [\"A\",\"B\",\"C\"]:
+		for j in [\"1\",\"2\",\"3\"]:
+			for k in [\"A\",\"B\",\"C\"]:
+				for l in [\"1\",\"2\",\"3\"]:
+					child_areas.append(get_node(\"Marks/\"+i+j+\"-\"+k+l))
+	for child in child_areas:
+		child.clicked.connect(_child_clicked)
+
+func _child_clicked(path):
+	print(path)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tg6ac"]
 size = Vector2(360, 360)
@@ -25,7 +48,7 @@ func _process(delta: float) -> void:
 "
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_yhxv0")
+script = SubResource("GDScript_nefi5")
 
 [node name="MoveAnywhere" type="Sprite2D" parent="."]
 position = Vector2(906, 531)
@@ -488,15 +511,14 @@ shape = SubResource("RectangleShape2D_tg6ac")
 visible = false
 speed_scale = 0.0
 
-[node name="B2-A1" type="Area2D" parent="Marks"]
-position = Vector2(325, 275)
-scale = Vector2(0.13, 0.13)
+[node name="B2-A1" type="Area2D" parent="Marks/A2-C3"]
+position = Vector2(638.461, -761.538)
 script = ExtResource("5_2d2vc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/B2-A1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/A2-C3/B2-A1"]
 shape = SubResource("RectangleShape2D_tg6ac")
 
-[node name="B2-A1" parent="Marks/B2-A1" instance=ExtResource("3_sqpk3")]
+[node name="B2-A1" parent="Marks/A2-C3/B2-A1" instance=ExtResource("3_sqpk3")]
 visible = false
 speed_scale = 0.0
 
