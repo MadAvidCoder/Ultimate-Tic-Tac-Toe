@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://deljyhcm5765t"]
+[gd_scene load_steps=9 format=3 uid="uid://deljyhcm5765t"]
 
 [ext_resource type="Texture2D" uid="uid://dvf4it0tgaalc" path="res://Grid.png" id="1_8bol6"]
 [ext_resource type="Texture2D" uid="uid://d3hk4ekvjbgjo" path="res://Move Anywhere.png" id="1_biwna"]
@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://n383v545glke" path="res://Next Player.png" id="2_gqmyl"]
 [ext_resource type="PackedScene" uid="uid://bymq1pe2orjuo" path="res://mark.tscn" id="3_sqpk3"]
 [ext_resource type="Script" path="res://click_check.gd" id="5_2d2vc"]
-[ext_resource type="Texture2D" uid="uid://cpl7mmbdjr654" path="res://Xs Win.png" id="7_yvnnf"]
-[ext_resource type="Texture2D" uid="uid://beb4wqeo2fxiu" path="res://Os win.png" id="8_vn7m8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tg6ac"]
 size = Vector2(360, 360)
@@ -25,20 +23,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 "
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_sm6mh"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_yvnnf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_vn7m8")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_yhxv0")
@@ -1162,25 +1146,3 @@ polygon = PackedVector2Array(0, 0, 180, 0, 180, 180, 0, 180)
 [node name="Sprite" parent="BigMarks/C3" instance=ExtResource("3_sqpk3")]
 scale = Vector2(0.5, 0.5)
 frame = 1
-
-[node name="Win" type="Node2D" parent="."]
-visible = false
-
-[node name="Fade" type="Polygon2D" parent="Win"]
-color = Color(1, 1, 1, 0.705882)
-polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 648, 0, 648)
-
-[node name="WinMark" parent="Win" instance=ExtResource("3_sqpk3")]
-position = Vector2(576, 172)
-sprite_frames = SubResource("SpriteFrames_sm6mh")
-speed_scale = 0.0
-
-[node name="Again" type="Button" parent="Win"]
-offset_left = 477.0
-offset_top = 503.0
-offset_right = 675.0
-offset_bottom = 560.0
-theme_override_font_sizes/font_size = 35
-text = "Play Again?"
-
-[connection signal="pressed" from="Win/Again" to="." method="_on_again_pressed"]
