@@ -1,4 +1,6 @@
-# Ultimate Tic-Tac-Toe
+# Tic-Tac-Toe
+### Check it out [here](https://madavidcoder.github.io/Ultimate-Tic-Tac-Toe)!
+
 Ultimate Tic-Tac-Toe is a variation of the very well-known game, Tic-Tac-Toe (also known as Noughts and Crosses).
 
 ## Rules
