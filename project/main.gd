@@ -163,8 +163,7 @@ func _process(_delta: float) -> void:
 		click_buffer = 0
 	elif state == 1:
 		if click_buffer:
-#			if child_sprites[click_buffer[0]][click_buffer[1]].visible == false and cur_big_square in [click_buffer[0], -1] and not click_buffer[0] in won:
-			if child_sprites[click_buffer[0]][click_buffer[1]].visible == false and not click_buffer[0] in won:
+			if child_sprites[click_buffer[0]][click_buffer[1]].visible == false and cur_big_square in [click_buffer[0], -1] and not click_buffer[0] in won:
 				child_sprites[click_buffer[0]][click_buffer[1]].frame = next.frame
 				child_sprites[click_buffer[0]][click_buffer[1]].show()
 				if check_won(click_buffer[0], next.frame):
