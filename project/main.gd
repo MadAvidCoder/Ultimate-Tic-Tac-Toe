@@ -123,7 +123,7 @@ func check_won(search_square: int, player: int) -> bool:
 		for condition in win_conditions:
 			var passes = true
 			for i in condition:
-				if big_sprites[i].frame != player or big_marks[i].visible == false:
+				if big_sprites[i].frame != player or big_marks[i].visible == false or big_sprites[i].visible == false:
 					passes = false
 			if passes:
 				return true
@@ -146,13 +146,25 @@ func _on_again_pressed() -> void:
 	win_overlay.hide()
 	reset()
 
+func check_full(square: int) -> bool:
+	var show_count = 0
+	for child in child_sprites[square]:
+		if child.visible:
+			show_count += 1
+	if show_count == 9:
+		return true
+	else:
+		return false
+
 func _process(_delta: float) -> void:
 	if state == 0:
 		begin.show()
 		anywhere.hide()
+		click_buffer = 0
 	elif state == 1:
 		if click_buffer:
-			if child_sprites[click_buffer[0]][click_buffer[1]].visible == false and cur_big_square in [click_buffer[0], -1] and not click_buffer[0] in won:
+#			if child_sprites[click_buffer[0]][click_buffer[1]].visible == false and cur_big_square in [click_buffer[0], -1] and not click_buffer[0] in won:
+			if child_sprites[click_buffer[0]][click_buffer[1]].visible == false and not click_buffer[0] in won:
 				child_sprites[click_buffer[0]][click_buffer[1]].frame = next.frame
 				child_sprites[click_buffer[0]][click_buffer[1]].show()
 				if check_won(click_buffer[0], next.frame):
@@ -162,7 +174,13 @@ func _process(_delta: float) -> void:
 					if check_won(-1, next.frame):
 						state = 2
 						winner = next.frame
-						click_buffer = 0
+				elif check_full(click_buffer[0]):
+					won.append(click_buffer[0])
+					big_sprites[click_buffer[0]].visible = false
+					big_marks[click_buffer[0]].show()
+					if len(won) == 9:
+						state = 2
+						winner = 2
 				if winner == -1:
 					next.frame = not next.frame
 					cur_big_square = click_buffer[1]
@@ -174,8 +192,7 @@ func _process(_delta: float) -> void:
 						anywhere.hide()
 						indicator.position = indicator_positions[cur_big_square]
 						indicator.show()
-			else:
-				click_buffer = 0
+			click_buffer = 0
 	else:
 		if not shown:
 			anywhere.hide()
