@@ -61,6 +61,7 @@ texture = ExtResource("2_gqmyl")
 [node name="NextMark" parent="." instance=ExtResource("3_sqpk3")]
 position = Vector2(906, 295)
 scale = Vector2(0.5, 0.5)
+frame = 0
 speed_scale = 0.0
 
 [node name="Indicator" type="Polygon2D" parent="."]
@@ -1178,7 +1179,6 @@ polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 648, 0, 648)
 [node name="WinMark" parent="Win" instance=ExtResource("3_sqpk3")]
 position = Vector2(576, 172)
 sprite_frames = SubResource("SpriteFrames_sm6mh")
-frame = 2
 speed_scale = 0.0
 
 [node name="Again" type="Button" parent="Win"]
