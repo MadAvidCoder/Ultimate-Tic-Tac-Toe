@@ -1,4 +1,4 @@
-# Tic-Tac-Toe
+# Ultimate Tic-Tac-Toe
 ![Wakatime](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fwaka.hackclub.com%2Fapi%2Fcompat%2Fshields%2Fv1%2FU081TBVQLCX%2Fall_time%2Fproject%253AUltimate%2520Tic-Tac-Toe&query=message&label=Wakatime)
 ![License](https://img.shields.io/github/license/madavidcoder/Ultimate-Tic-Tac-Toe)
 ![Created At](https://img.shields.io/github/created-at/madavidcoder/Ultimate-Tic-Tac-Toe)
