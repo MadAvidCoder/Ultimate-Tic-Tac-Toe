@@ -303,6 +303,7 @@ func _process(_delta: float) -> void:
 						winner = 2
 				if winner == -1:
 					next.frame = not next.frame
+					cur_big_square = chosen
 					if cur_big_square in won:
 						cur_big_square = -1
 						anywhere.show()
