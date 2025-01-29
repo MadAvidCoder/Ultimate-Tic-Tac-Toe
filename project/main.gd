@@ -22,6 +22,7 @@ var winner
 var win_overlay
 var win_mark
 var begin
+var difficulty
 
 func _ready() -> void:
 	child_areas = []
@@ -84,7 +85,8 @@ func _ready() -> void:
 			big_marks.append(get_node("BigMarks/"+i+j))
 			big_sprites.append(get_node("BigMarks/"+i+j+"/Sprite"))
 	
-	ai = true
+	ai = false
+	difficulty = 2
 
 func reset() -> void:
 	next.frame = 0
@@ -112,6 +114,8 @@ func reset() -> void:
 	won = []
 	
 	shown = false
+	
+	ai = false
 
 func _child_clicked(path):
 	path = str(path).split("/")[4].split("-")
@@ -139,6 +143,21 @@ func check_won(search_square: int, player: int) -> bool:
 	return false
 
 func _on_play_pressed() -> void:
+	ai = false
+	begin.hide()
+	anywhere.show()
+	state = 1
+
+func _on_ai_1_pressed() -> void:
+	ai = true
+	difficulty = 1
+	begin.hide()
+	anywhere.show()
+	state = 1
+
+func _on_ai_2_pressed() -> void:
+	ai = true
+	difficulty = 2
 	begin.hide()
 	anywhere.show()
 	state = 1
@@ -209,38 +228,90 @@ func _process(_delta: float) -> void:
 							indicator.show()
 				click_buffer = 0
 		else:
-			var chosen
-			var big = cur_big_square
-			if cur_big_square == -1:
-				big = allowed_big().pick_random()
-			chosen = allowed_small(big).pick_random()
-			child_sprites[big][chosen].frame = next.frame
-			child_sprites[big][chosen].show()
-			if check_won(big, next.frame):
-				won.append(big)
-				big_sprites[big].frame = next.frame
-				big_marks[big].show()
-				if check_won(-1, next.frame):
-					state = 2
-					winner = next.frame
-			elif check_full(big):
-				won.append(big)
-				big_sprites[big].visible = false
-				big_marks[big].show()
-				if len(won) == 9:
-					state = 2
-					winner = 2
-			if winner == -1:
-				next.frame = not next.frame
-				cur_big_square = chosen
-				if cur_big_square in won:
-					cur_big_square = -1
-					anywhere.show()
-					indicator.hide()
-				else:
-					anywhere.hide()
-					indicator.position = indicator_positions[cur_big_square]
-					indicator.show()
+			## Random Move
+			if difficulty == 1:
+				var chosen
+				var big = cur_big_square
+				if cur_big_square == -1:
+					big = allowed_big().pick_random()
+				chosen = allowed_small(big).pick_random()
+				child_sprites[big][chosen].frame = next.frame
+				child_sprites[big][chosen].show()
+				if check_won(big, next.frame):
+					won.append(big)
+					big_sprites[big].frame = next.frame
+					big_marks[big].show()
+					if check_won(-1, next.frame):
+						state = 2
+						winner = next.frame
+				elif check_full(big):
+					won.append(big)
+					big_sprites[big].visible = false
+					big_marks[big].show()
+					if len(won) == 9:
+						state = 2
+						winner = 2
+				if winner == -1:
+					next.frame = not next.frame
+					cur_big_square = chosen
+					if cur_big_square in won:
+						cur_big_square = -1
+						anywhere.show()
+						indicator.hide()
+					else:
+						anywhere.hide()
+						indicator.position = indicator_positions[cur_big_square]
+						indicator.show()
+			elif difficulty == 2:
+				var chosen
+				var big = cur_big_square
+				if cur_big_square == -1:
+					big = allowed_big().pick_random()
+				for choice in allowed_small(big):
+					child_sprites[big][choice].frame = next.frame
+					child_sprites[big][choice].show()
+					if check_won(big, next.frame):
+						chosen = choice
+						break
+					child_sprites[big][choice].hide()
+				if not chosen:
+					for choice in allowed_small(big):
+						child_sprites[big][choice].frame = not next.frame
+						child_sprites[big][choice].show()
+						if check_won(big, not next.frame):
+							chosen = choice
+							child_sprites[big][choice].frame = next.frame
+							break
+						child_sprites[big][choice].hide()
+				if not chosen:
+					chosen = allowed_small(big).pick_random()
+					child_sprites[big][chosen].frame = next.frame
+					child_sprites[big][chosen].show()
+				if check_won(big, next.frame):
+					won.append(big)
+					big_sprites[big].frame = next.frame
+					big_marks[big].show()
+					if check_won(-1, next.frame):
+						state = 2
+						winner = next.frame
+				elif check_full(big):
+					won.append(big)
+					big_sprites[big].visible = false
+					big_marks[big].show()
+					if len(won) == 9:
+						state = 2
+						winner = 2
+				if winner == -1:
+					next.frame = not next.frame
+					if cur_big_square in won:
+						cur_big_square = -1
+						anywhere.show()
+						indicator.hide()
+					else:
+						anywhere.hide()
+						indicator.position = indicator_positions[cur_big_square]
+						indicator.show()
+				
 	else:
 		if not shown:
 			anywhere.hide()
