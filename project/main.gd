@@ -92,7 +92,7 @@ func reset() -> void:
 	
 	ai = false
 
-func _child_clicked(path):
+func _child_clicked(path: Variant) -> void:
 	path = str(path).split("/")[4].split("-")
 	var big: int = squares.find(path[0])
 	var small: int = squares.find(path[1])
@@ -151,14 +151,14 @@ func check_full(square: int) -> bool:
 	else:
 		return false
 
-func allowed_big():
+func allowed_big() -> Array[int]:
 	var ret_list: Array[int] = []
 	for i in range(0,8):
 		if not i in won:
 			ret_list.append(i)
 	return ret_list
 
-func allowed_small(square):
+func allowed_small(square: int) -> Array[int]:
 	var ret_list: Array[int] = []
 	for i in range(0,8):
 		if not child_sprites[square][i].visible:
