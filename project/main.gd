@@ -1,34 +1,32 @@
 extends Node2D
 
-var child_areas
-var child_sprites
-var x
-var o
-var ai
-var next
-var indicator
-var indicator_positions
-var shown
-var anywhere
-var cur_big_square
-var squares
-var big_marks
-var big_sprites
-var click_buffer
-var won
-var win_conditions
-var state
-var winner
-var win_overlay
-var win_mark
-var begin
-var difficulty
+var child_areas: Array[Array] = []
+var child_sprites: Array[Array] = []
+const x: int = 0
+const o: int = 1
+var ai: bool = false
+var next: Node
+var indicator: Node
+const indicator_positions: PackedVector2Array = [Vector2(101,50), Vector2(101,234), Vector2(101,418), Vector2(285,50), Vector2(285,234), Vector2(285,418), Vector2(469,50), Vector2(469,234), Vector2(469,418)]
+var shown: bool = false
+var anywhere: Node
+var cur_big_square: int = -1
+var squares: PackedStringArray = ["A1","A2","A3","B1","B2","B3","C1","C2","C3"]
+var big_marks: Array[Node] = []
+var big_sprites: Array[Node] = []
+var click_buffer: Variant
+var won: Array[int] = []
+var win_conditions: Array[Array] = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
+var state: int = 0
+var winner: int = -1
+var win_overlay: Node
+var win_mark: Node
+var begin: Node
+var difficulty: int = 1
 
 func _ready() -> void:
-	child_areas = []
-	var child_areas_buf = []
-	child_sprites = []
-	var child_sprites_buf = []
+	var child_areas_buf: Array[Object] = []
+	var child_sprites_buf: Array[Object] = []
 	for i in ["A","B","C"]:
 		for j in ["1","2","3"]:
 			for k in ["A","B","C"]:
@@ -53,40 +51,17 @@ func _ready() -> void:
 	win_overlay.hide()
 	
 	win_mark = get_node("Win/WinMark")
-	
-	winner = -1
-	
-	state = 0
-	
+
 	indicator = get_node("Indicator")
-	indicator_positions = [Vector2(101,50), Vector2(101,234), Vector2(101,418), Vector2(285,50), Vector2(285,234), Vector2(285,418), Vector2(469,50), Vector2(469,234), Vector2(469,418)]
 	indicator.hide()
 	
 	anywhere = get_node("MoveAnywhere")
 	anywhere.show()
 	
-	cur_big_square = -1
-	
-	x = 0
-	o = 1
-	
-	won = []
-	
-	squares = ["A1","A2","A3","B1","B2","B3","C1","C2","C3"]
-	
-	win_conditions = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
-	
-	shown = false
-	
-	big_marks = []
-	big_sprites = []
 	for i in ["A","B","C"]:
 		for j in ["1","2","3"]:
 			big_marks.append(get_node("BigMarks/"+i+j))
 			big_sprites.append(get_node("BigMarks/"+i+j+"/Sprite"))
-	
-	ai = false
-	difficulty = 2
 
 func reset() -> void:
 	next.frame = 0
@@ -119,14 +94,14 @@ func reset() -> void:
 
 func _child_clicked(path):
 	path = str(path).split("/")[4].split("-")
-	var big = squares.find(path[0])
-	var small = squares.find(path[1])
+	var big: int = squares.find(path[0])
+	var small: int = squares.find(path[1])
 	click_buffer = [big,small]
 
 func check_won(search_square: int, player: int) -> bool:
 	if search_square == -1:
 		for condition in win_conditions:
-			var passes = true
+			var passes: bool = true
 			for i in condition:
 				if big_sprites[i].frame != player or big_marks[i].visible == false or big_sprites[i].visible == false:
 					passes = false
@@ -134,7 +109,7 @@ func check_won(search_square: int, player: int) -> bool:
 				return true
 	else:
 		for condition in win_conditions:
-			var passes = true
+			var passes: bool = true
 			for i in condition:
 				if child_sprites[search_square][i].frame != player or child_sprites[search_square][i].visible == false:
 					passes = false
@@ -167,7 +142,7 @@ func _on_again_pressed() -> void:
 	reset()
 
 func check_full(square: int) -> bool:
-	var show_count = 0
+	var show_count: int = 0
 	for child in child_sprites[square]:
 		if child.visible:
 			show_count += 1
@@ -177,14 +152,14 @@ func check_full(square: int) -> bool:
 		return false
 
 func allowed_big():
-	var ret_list = []
+	var ret_list: Array[int] = []
 	for i in range(0,8):
 		if not i in won:
 			ret_list.append(i)
 	return ret_list
 
 func allowed_small(square):
-	var ret_list = []
+	var ret_list: Array[int] = []
 	for i in range(0,8):
 		if not child_sprites[square][i].visible:
 			ret_list.append(i)
@@ -230,8 +205,8 @@ func _process(_delta: float) -> void:
 		else:
 			## Random Move
 			if difficulty == 1:
-				var chosen
-				var big = cur_big_square
+				var chosen: int
+				var big: int = cur_big_square
 				if cur_big_square == -1:
 					big = allowed_big().pick_random()
 				chosen = allowed_small(big).pick_random()
@@ -263,8 +238,8 @@ func _process(_delta: float) -> void:
 						indicator.position = indicator_positions[cur_big_square]
 						indicator.show()
 			elif difficulty == 2:
-				var chosen
-				var big = cur_big_square
+				var chosen: int
+				var big: int = cur_big_square
 				if cur_big_square == -1:
 					big = allowed_big().pick_random()
 				for choice in allowed_small(big):
