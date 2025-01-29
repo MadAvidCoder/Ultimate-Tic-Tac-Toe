@@ -1,7 +1,6 @@
 # Tic-Tac-Toe
 ### Play it [here](https://madavidcoder.github.io/Ultimate-Tic-Tac-Toe)!
-
-Ultimate Tic-Tac-Toe is a variation of the very well-known game, Tic-Tac-Toe (also known as Noughts and Crosses).
+Ultimate Tic-Tac-Toe is a variation of the very well-known game, Tic-Tac-Toe (also known as Noughts and Crosses). Play against a friend, or see if you can beat the computer!
 
 ## Rules
 The Ultimate Tic-Tac-Toe grid is similar to the conventional Tic-Tac-Toe grid, but inside each of the nine large squares, is an additional 3x3 grid.
